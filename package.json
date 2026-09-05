@@ -1,0 +1,17 @@
+{
+	"name": "s27-ultra-observatory",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"test": "node --test test/*.test.js",
+		"build": "node scripts/build.js",
+		"serve": "node scripts/serve.js",
+		"test:browser": "playwright test",
+		"review:week": "node scripts/weekly.js"
+	},
+	"devDependencies": {
+		"@playwright/test": "1.63.0",
+		"@axe-core/playwright": "4.13.0"
+	}
+}
