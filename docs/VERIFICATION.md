@@ -45,4 +45,3 @@ Self-audit: no glossy technology gradient background, default indigo, feature-ti
 Artifacts: Actions run → `browser-evidence` and `live-browser-evidence`. Each contains full-page desktop/mobile PNG files and a Playwright HTML report with geometry attachments. The final documentation commit reruns the same gates; use the newest successful run for the current deployed commit.
 
 Nonblocking platform warning: GitHub forced the official v4 checkout/setup-node/upload-artifact actions from their declared Node 20 runtime to Node 24. Both local and live verification jobs succeeded. The project application/test runtime is Node 22 in CI.
-
