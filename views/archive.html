@@ -1,49 +1,40 @@
-<a class="skip-link" href="#evidence">Skip to evidence</a>
-<header class="masthead wrap">
-	<a class="wordmark" href="./" aria-label="S27 Ultra Observatory home"><span class="mark" aria-hidden="true">◎</span> S27 ULTRA <span>OBSERVATORY</span></a>
-	<nav aria-label="Main navigation"><a href="#evidence">Evidence</a><a href="#history">Snapshots</a><a href="#method">Our method</a></nav>
+<a class="skip-link" href="#reports">Skip to reports</a>
+<header class="site-header">
+	<div class="wrap header-inner">
+		<a class="wordmark" href="./" aria-label="S27 Ultra Observatory home">S27 ULTRA <span>OBSERVATORY</span></a>
+		<a class="header-link" href="data/index.json">Open JSON ↗</a>
+	</div>
 </header>
 <main class="wrap">
-	<div class="edition-line"><span>INDEPENDENT FIELD NOTES / GALAXY S27 ULTRA</span><span id="edition">Loading collection…</span></div>
-	<section class="overview" aria-labelledby="page-title">
-		<div class="intro">
-			<p class="eyebrow">Before the announcement</p>
-			<h1 id="page-title">Follow the evidence.<br><em>Not the hype.</em></h1>
-			<p class="standfirst">The Galaxy S27 Ultra, still taking shape. A considered collection of what is reported, what conflicts, and what we simply don’t know.</p>
-			<a class="text-link" href="#evidence">Explore the field notes <span aria-hidden="true">↘</span></a>
-			<p class="disclaimer">An unofficial rumor archive. Nothing here is a confirmed specification unless explicitly marked.</p>
-		</div>
-		<figure class="lead-art">
-			<img id="artwork" src="assets/optical-study.svg" width="900" height="690" alt="Abstract concentric optical rings and a rust-colored alignment line on a dark field.">
-			<figcaption><span>OPTICAL STUDY / 01</span><span>Original illustration. Not a leaked render.</span></figcaption>
-		</figure>
+	<section class="intro" aria-labelledby="page-title">
+		<p class="eyebrow">Samsung Galaxy S27 Ultra</p>
+		<h1 id="page-title">Reports</h1>
+		<p class="intro-copy">A readable archive of the latest S27 Ultra leak reports, with the original sources kept close at hand.</p>
 	</section>
-	<section class="collection-bar" aria-label="Collection summary"><p id="collection-count">Reading the archive…</p><p id="check-date"></p><a href="data/index.json">Open data ↗</a></section>
+	<section class="report-tools" aria-labelledby="tools-title">
+		<h2 id="tools-title" class="sr-only">Find reports</h2>
+		<form id="filters" role="search">
+			<div class="search-field">
+				<label for="search">Search reports</label>
+				<input id="search" name="q" type="search" placeholder="Search titles or summaries" autocomplete="off" maxlength="300">
+			</div>
+			<div class="sort-field">
+				<label for="sort">Reading order</label>
+				<select id="sort" name="sort">
+					<option value="newest">Newest source first</option>
+					<option value="oldest">Oldest source first</option>
+				</select>
+			</div>
+		</form>
+	</section>
 	<p class="error" id="load-error" role="alert" hidden></p>
-	<noscript><p class="error">JavaScript is needed for interactive filtering. Read the <a href="data/index.json">snapshot index</a> and <a href="data/snapshots/2026-09-06.json">first collection as JSON</a>.</p></noscript>
-	<section id="history" class="history section" aria-labelledby="history-title">
-		<div><p class="eyebrow">01 / The collection</p><h2 id="history-title">A record, not a moving target.</h2><p>Snapshots preserve what this archive held on each collection date. Source publication dates are shown separately.</p></div>
-		<div class="snapshot-box"><label for="snapshot">Viewing snapshot</label><select id="snapshot" disabled><option>Loading…</option></select><p id="snapshot-note">The first collection starts here. No earlier observations have been invented.</p><a id="snapshot-download" href="data/index.json">Read this snapshot as JSON ↗</a></div>
-	</section>
-	<section class="section evidence" id="evidence" aria-labelledby="evidence-title">
-		<div class="section-heading"><div><p class="eyebrow">02 / The evidence index</p><h2 id="evidence-title">The signals. And the caveats.</h2></div><p>Open any field note to inspect<br>its sources and editorial reasoning.</p></div>
-		<div class="archive-layout">
-			<aside class="controls" aria-label="Filter evidence">
-				<form id="filters" role="search">
-					<label for="search">Search the collection</label><input id="search" name="q" type="search" placeholder="Try battery or Exynos" autocomplete="off">
-					<label for="category">Category</label><select id="category" name="category"><option value="all">All categories</option></select>
-					<label for="status">Evidence state</label><select id="status" name="status"><option value="all">All states</option><option value="reported">Reported</option><option value="disputed">Disputed</option><option value="superseded">Superseded</option><option value="confirmed">Confirmed</option></select>
-					<label for="sort">Reading order</label><select id="sort" name="sort"><option value="newest">Newest source first</option><option value="oldest">Oldest source first</option></select>
-					<button id="reset" type="button">Reset filters</button>
-				</form>
-				<div class="reading-key"><p class="eyebrow">A note on confidence</p><p>Confidence describes the evidence behind a report, not the odds of it shipping.</p><a href="#method">How we assess claims ↓</a></div>
-			</aside>
-			<div class="results"><p id="result-count" role="status" aria-live="polite">Loading field notes…</p><div id="claims"></div><p id="empty" class="empty" hidden>No field notes match these filters. Try another term or reset the filters.</p></div>
+	<section id="reports" class="reports" aria-labelledby="reports-title">
+		<div class="reports-heading">
+			<div><p class="eyebrow">S27 Ultra reports</p><h2 id="reports-title">Latest reporting</h2></div>
+			<p id="result-count" role="status" aria-live="polite">Loading reports…</p>
 		</div>
+		<div id="report-list"></div>
+		<p id="empty" class="empty" hidden>No reports match that search. Try another title or summary.</p>
 	</section>
-	<section class="method section" id="method" aria-labelledby="method-title">
-		<div><p class="eyebrow">03 / Editorial standards</p><h2 id="method-title">Uncertainty belongs<br>in the story.</h2><p>We link to reporting, separate original tips from repetition, and keep disagreements intact. A rumor repeated by five sites is not five independent confirmations.</p></div>
-		<div class="method-details"><details><summary>What do the states mean?</summary><p><strong>Reported:</strong> a sourced allegation, not established fact. <strong>Disputed:</strong> conflicting accounts or an explicit challenge. <strong>Superseded:</strong> retained for history with a linked replacement. <strong>Confirmed:</strong> backed by official evidence. Empty states are intentional, not missing content.</p></details><details><summary>How is confidence assigned?</summary><p><strong>Low:</strong> one rumor chain, indirect interpretation or speculation. <strong>Medium:</strong> specific attributed reporting or inspectable evidence, still unconfirmed. <strong>High:</strong> independent primary corroboration. These labels are editorial judgments, not percentages. Read each note’s reasoning.</p></details><details><summary>What changes each week?</summary><p>Each weekly review attempts fresh research. Material evidence gets a new dated snapshot; an unchanged week gets only a review record. Old snapshots stay intact. Scheduling is external to this website; the visible last-check date is the record of completed work, not a promise that a timer ran.</p><div id="check-log"></div></details><details><summary>Where does the artwork come from?</summary><p id="art-credit">Optical study 01 is original abstract artwork, released under CC0. It is neither a leaked device image nor an authentic Samsung render. Publisher images remain at their original source links.</p></details></div>
-	</section>
+	<noscript><p class="error">JavaScript is needed to browse the reports. <a href="data/index.json">Open the JSON data</a>.</p></noscript>
 </main>
-<footer class="wrap footer"><p>S27 ULTRA OBSERVATORY<br><span>Independent. Source-led. Open to correction.</span></p><div><a href="https://github.com/ziwei531/s27-ultra-observatory">Repository ↗</a><a href="https://github.com/ziwei531/s27-ultra-observatory/issues/new">Suggest a source or correction ↗</a><p>Not affiliated with Samsung. Product names belong to their owners.</p></div></footer>

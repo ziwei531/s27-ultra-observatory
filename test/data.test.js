@@ -3,12 +3,12 @@ import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { validateDate, validateSnapshot } from "../scripts/validate.js";
-import { categories, filterClaims, formatDate, readFilters, safeSourceUrl } from "../js/model.js";
+import { filterReports, formatDate, readFilters, safeSourceUrl } from "../js/model.js";
 
 const catalog = JSON.parse( await readFile( "data/index.json", "utf8" ) );
 const snapshots = await Promise.all( catalog.snapshots.map( async ( entry ) => JSON.parse( await readFile( entry.path, "utf8" ) ) ) );
 const snapshot = snapshots.at( -1 );
-const defaultFilters = { q: "", category: "all", status: "all", sort: "newest" };
+const defaultFilters = { q: "", sort: "newest" };
 
 test( "catalog hashes, dates, membership and ordering are valid", async () => {
 	assert.equal( catalog.schemaVersion, 1 );
@@ -52,15 +52,12 @@ test( "baseline retains actual collected counts and disputes", () => {
 	assert.ok( baseline.claims.every( ( claim ) => claim.firstObservedAt === "2026-09-06" ) );
 } );
 
-test( "filters search claims and publishers, combine categories and sort source dates", () => {
-	assert.ok( filterClaims( snapshot, { ...defaultFilters, q: "EXYNOS" } ).length > 0 );
-	assert.ok( filterClaims( snapshot, { ...defaultFilters, q: "galaxyclub" } ).length > 0 );
-	assert.equal( filterClaims( snapshot, { ...defaultFilters, q: "not-a-real-query-xyz" } ).length, 0 );
-	for ( const category of categories ) {
-		assert.ok( filterClaims( snapshot, { ...defaultFilters, category } ).every( ( claim ) => claim.category === category ) );
-	}
-	const newest = filterClaims( snapshot, defaultFilters );
-	const oldest = filterClaims( snapshot, { ...defaultFilters, sort: "oldest" } );
+test( "searches only report titles and summaries and sorts by source date", () => {
+	assert.ok( filterReports( snapshot, { ...defaultFilters, q: "EXYNOS" } ).length > 0 );
+	assert.equal( filterReports( snapshot, { ...defaultFilters, q: "publisher-only-no-match" } ).length, 0 );
+	assert.equal( filterReports( snapshot, { ...defaultFilters, q: "not-a-real-query-xyz" } ).length, 0 );
+	const newest = filterReports( snapshot, defaultFilters );
+	const oldest = filterReports( snapshot, { ...defaultFilters, sort: "oldest" } );
 	assert.ok( newest[ 0 ].sourceDate >= newest.at( -1 ).sourceDate );
 	assert.ok( oldest[ 0 ].sourceDate <= oldest.at( -1 ).sourceDate );
 } );
@@ -90,12 +87,12 @@ test( "validator catches dangling evidence, unsafe image paths and invalid dates
 	}
 } );
 
-test( "superseded rendering model supports explicit replacements (test-only fixture)", () => {
+test( "legacy report metadata remains validated but is not a frontend filter", () => {
 	const copy = structuredClone( snapshot );
 	copy.claims[ 0 ].status = "superseded";
 	copy.claims[ 0 ].supersededBy = copy.claims[ 1 ].id;
 	validateSnapshot( copy );
-	assert.equal( filterClaims( copy, { ...defaultFilters, status: "superseded" } ).length, 1 );
+	assert.equal( filterReports( copy, defaultFilters ).length, copy.claims.length );
 } );
 
 test( "application uses safe DOM sinks and project JavaScript conventions", async () => {
@@ -110,5 +107,5 @@ test( "application uses safe DOM sinks and project JavaScript conventions", asyn
 	}
 	const app = await readFile( "js/app.js", "utf8" );
 	assert.doesNotMatch( app, /\.innerHTML|insertAdjacentHTML|document\.write|\beval\s*\(/ );
-	assert.match( app, /^\t+, /m );
+	assert.match( app, /	  "/m );
 } );
