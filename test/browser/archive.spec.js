@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 
 const catalog = JSON.parse( await readFile( "data/index.json", "utf8" ) );
 const snapshot = JSON.parse( await readFile( catalog.snapshots.find( ( entry ) => entry.id === catalog.latest ).path, "utf8" ) );
+const timeline = JSON.parse( await readFile( "data/early-timeline.json", "utf8" ) );
+const reportCount = snapshot.claims.length + timeline.reports.length;
 
 for ( const viewport of [ { name: "desktop", width: 1280, height: 900 }, { name: "mobile", width: 390, height: 844 } ] ) {
 	test( `${ viewport.name } reports-first layout is accessible and fits`, async ( { page }, testInfo ) => {
@@ -12,7 +14,7 @@ for ( const viewport of [ { name: "desktop", width: 1280, height: 900 }, { name:
 		await page.setViewportSize( viewport );
 		const response = await page.goto( "./" );
 		expect( response.status() ).toBe( 200 );
-		await expect( page.locator( ".report" ) ).toHaveCount( snapshot.claims.length );
+		await expect( page.locator( ".report" ) ).toHaveCount( reportCount );
 		await expect( page.getByRole( "heading", { name: "Reports", level: 1 } ) ).toBeVisible();
 		await expect( page.locator( "#report-list" ) ).toBeVisible();
 		expect( await page.locator( "#artwork" ).count() ).toBe( 0 );

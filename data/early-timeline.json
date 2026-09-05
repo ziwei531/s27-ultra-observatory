@@ -1,0 +1,62 @@
+{
+	"schemaVersion": 1,
+	"title": "Earliest recorded S27 Ultra leak timeline",
+	"observedAt": "2026-09-06",
+	"scope": "Donsetch searches for S27 Ultra reports before 28 July 2025; 22 June 2025 is the earliest dated readable result located in this review. This is a search finding, not proof that no earlier private or unindexed leak existed.",
+	"sources": [
+		{
+			"id": "gc-2025-spen",
+			"publisher": "Gizmochina",
+			"title": "Galaxy S27 Ultra will ditch built-in S Pen, says tipster",
+			"url": "https://www.gizmochina.com/2025/06/22/galaxy-s27-ultra-will-ditch-built-in-s-pen-says-tipster/",
+			"date": "2025-06-22",
+			"kind": "reported-leak"
+		},
+		{
+			"id": "sf-2025-spen",
+			"publisher": "Sammy Fans",
+			"title": "Galaxy S27 Ultra might repeat S21 Ultra’s biggest S Pen flaw",
+			"url": "https://www.sammyfans.com/2025/06/22/galaxy-s27-ultra-might-repeat-s21-ultras-biggest-s-pen-flaw/",
+			"date": "2025-06-22",
+			"kind": "reported-leak"
+		},
+		{
+			"id": "sm-2025-spen",
+			"publisher": "SamMobile",
+			"title": "Galaxy S27 Ultra may mark the end of the built-in S Pen slot",
+			"url": "https://www.sammobile.com/news/galaxy-s27-ultra-may-mark-the-end-of-the-built-in-s-pen-slot/",
+			"date": "2025-06-22",
+			"kind": "reported-leak"
+		},
+		{
+			"id": "nc-2025-camera",
+			"publisher": "Notebookcheck",
+			"title": "Samsung Galaxy S27 Ultra will only get triple camera setup according to leak",
+			"url": "https://notebookcheck.net/Samsung-Galaxy-S27-Ultra-will-only-get-a-triple-camera-according-to-a-leak.1070197.0.html",
+			"date": "2025-07-27",
+			"kind": "reported-leak"
+		}
+	],
+	"reports": [
+		{
+			"id": "timeline-spen-slot",
+			"title": "The earliest located reports: a possible S Pen slot removal",
+			"sourceDate": "2025-06-22",
+			"summary": "The earliest dated S27 Ultra reports located in this review said Samsung might remove the built-in S Pen slot, potentially freeing space for a larger battery, slimmer hardware or other internal priorities. Gizmochina attributed the claim to Setsuna Digital; Sammy Fans and SamMobile described the same broader rumor through related tipster coverage.",
+			"evidence": [
+				{ "sourceId": "gc-2025-spen" },
+				{ "sourceId": "sf-2025-spen" },
+				{ "sourceId": "sm-2025-spen" }
+			]
+		},
+		{
+			"id": "timeline-triple-camera",
+			"title": "A month later: triple-camera design and Sony main sensor rumored",
+			"sourceDate": "2025-07-27",
+			"summary": "Notebookcheck reported an Ice Universe Weibo leak claiming the S27 Ultra could drop the 3× telephoto lens, use a larger 200-megapixel Sony main sensor, retain a 50-megapixel 5× periscope camera and move to three rear cameras. The article described this as an unconfirmed plan with time left to change.",
+			"evidence": [
+				{ "sourceId": "nc-2025-camera" }
+			]
+		}
+	]
+}

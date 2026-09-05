@@ -85,7 +85,13 @@ async function initializeArchive() {
 	try {
 		const catalog = await fetchJson( "data/index.json" );
 		const entry   = catalog.snapshots.find( ( snapshot ) => snapshot.id === catalog.latest );
-		currentSnapshot = await fetchJson( entry.path );
+		const snapshot = await fetchJson( entry.path );
+		const timeline = await fetchJson( "data/early-timeline.json" );
+		currentSnapshot = {
+			...snapshot
+			, claims : [ ...timeline.reports, ...snapshot.claims ]
+			, sources: [ ...timeline.sources, ...snapshot.sources ]
+		};
 		restoreLocation();
 		elements.filters.addEventListener( "submit", ( event ) => event.preventDefault() );
 		elements.search.addEventListener( "input", renderResults );
