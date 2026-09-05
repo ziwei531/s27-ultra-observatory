@@ -30,7 +30,7 @@ test( "search is limited to report title and summary, and sources expand", async
 	await page.goto( "./" );
 	await page.getByLabel( "Search reports" ).fill( "Exynos" );
 	await expect( page.locator( ".report" ) ).toHaveCount( snapshot.claims.filter( ( report ) => `${ report.title } ${ report.summary }`.toLowerCase().includes( "exynos" ) ).length );
-	await page.getByLabel( "Search reports" ).fill( "galaxyclub" );
+	await page.getByLabel( "Search reports" ).fill( "publisher-only-no-match" );
 	await expect( page.locator( ".report" ) ).toHaveCount( 0 );
 	await page.getByLabel( "Search reports" ).fill( "" );
 	await page.getByLabel( "Reading order" ).selectOption( "oldest" );
