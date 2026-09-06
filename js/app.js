@@ -1,7 +1,7 @@
 import { filterReports, formatDate, readFilters, safeSourceUrl } from "./model.js?v=__BUILD_VERSION__";
 
 const elements = Object.fromEntries( [
-	  "filters", "model", "search", "sort", "model-name", "reports-model", "result-count", "report-list", "empty", "load-error", "leaker-list", "leakers-disclaimer"
+	  "filters", "model", "search", "sort", "model-name", "reports-model", "result-count", "report-list", "empty", "load-error", "leaker-list", "leakers-disclaimer", "leaker-index"
 ].map( ( id ) => [ id, document.getElementById( id ) ] ) );
 let catalog;
 let currentSnapshot;
@@ -110,6 +110,14 @@ async function loadLeakers() {
 	}
 }
 
+function bindLeakerDisclosure() {
+	elements[ "leaker-index" ].addEventListener( "toggle", () => {
+		if ( !elements[ "leaker-index" ].open ) {
+			elements[ "leaker-index" ].scrollIntoView( { behavior: "smooth", block: "start" } );
+		}
+	} );
+}
+
 async function loadModel( modelId ) {
 	selectedModel = catalog.models.find( ( model ) => model.id === modelId );
 	const manifest = await fetchJson( selectedModel.manifest );
@@ -153,6 +161,7 @@ async function initializeArchive() {
 			elements.model.append( option );
 		}
 		await Promise.all( [ loadLeakers(), restoreLocation() ] );
+		bindLeakerDisclosure();
 		elements.filters.addEventListener( "submit", ( event ) => event.preventDefault() );
 		elements.model.addEventListener( "change", selectModel );
 		elements.search.addEventListener( "input", renderResults );

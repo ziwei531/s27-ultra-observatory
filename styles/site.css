@@ -93,13 +93,27 @@ summary:hover { color: var(--accent); }
 	border: 0;
 }
 
+.people[open] .people-content {
+	animation: leaker-reveal .2s ease-out both;
+}
+
+@keyframes leaker-reveal {
+	from { opacity: 0; transform: translateY(-.35rem); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.people[open] .people-content,
+	.disclosure-icon { animation: none; transition: none; }
+}
 .people-content {
-	padding: 1rem;
 	border: 1px solid var(--line);
 	border-top: 0;
 	border-bottom-right-radius: 7px;
 	border-bottom-left-radius: 7px;
 	background: #fff;
+	padding: 1rem;
 }
 .people-heading {
 	display: flex;
