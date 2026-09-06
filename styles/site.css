@@ -27,7 +27,7 @@ h3 { font-size: clamp(1.25rem, 2.1vw, 1.65rem); }
 .report-tools { border-block: 1px solid var(--line); padding: 22px 0; }
 #filters { display: grid; grid-template-columns: 220px minmax(0, 1fr) 220px; gap: 20px; align-items: end; }
 label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 7px; }
-.reports { padding: 48px 0 80px; }
+.reports { padding: 48px 0 24px; }
 .reports-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
 .reports-heading .eyebrow { margin-bottom: 8px; }
 #result-count { color: var(--muted); font-size: 14px; }
@@ -88,7 +88,7 @@ summary:hover { color: var(--accent); }
 }
 
 .people {
-	margin: 1.5rem 0 2rem;
+	margin: 0 0 2rem;
 	padding: 0;
 	border: 0;
 }
