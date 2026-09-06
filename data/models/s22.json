@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"model": "s22",
 	"latest": "2026-09-06",
-	"timeline": null,
+	"timeline": "data/models/s22/timeline.json",
 	"snapshots": [
 		{
 			"id": "2026-09-06",

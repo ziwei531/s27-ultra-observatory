@@ -8,6 +8,7 @@
 - The root model catalog defaults to `s27-ultra`; each selected **Galaxy S generation** loads only its own manifest and family reports.
 - Run `npm run build`, `node scripts/check-history.js`, `git diff --check`, and direct behavior checks before publication.
 - Keep verification proportionate: this simple static project intentionally has no automated test suite or test framework.
+- Do not start `npm run serve` or any local preview server unless the user explicitly requests a preview or browser session.
 - Never rewrite a historical snapshot or invent a past observation.
 - No secrets, analytics, personal data, copied publisher imagery or unsupported specifications.
 - Full update procedure: `docs/UPDATING.md`. Record execution in `docs/PROGRESS.md`.

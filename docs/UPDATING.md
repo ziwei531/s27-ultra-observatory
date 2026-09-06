@@ -29,7 +29,7 @@ Or record an honestly completed no-change review without creating a snapshot:
 npm run review:week -- YYYY-MM-DD --no-change --model=s23 --notes="Reviewed [sources and date range]; no material new evidence; [access limitations]."
 ```
 
-Omit `--model` for the default S27 Ultra collection. The helper updates only the selected model manifest. It does not commit, push or claim deployment success.
+Omit `--model` for the default S27 Family collection. The helper updates only the selected model manifest. It does not commit, push or claim deployment success.
 
 ## Publication checks
 

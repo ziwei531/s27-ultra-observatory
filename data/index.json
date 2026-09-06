@@ -7,6 +7,6 @@
 		{ "id": "s24", "label": "Samsung Galaxy S24 family", "shortLabel": "S24 family", "manifest": "data/models/s24.json" },
 		{ "id": "s25", "label": "Samsung Galaxy S25 family", "shortLabel": "S25 family", "manifest": "data/models/s25.json" },
 		{ "id": "s26", "label": "Samsung Galaxy S26 family", "shortLabel": "S26 family", "manifest": "data/models/s26.json" },
-		{ "id": "s27-ultra", "label": "Samsung Galaxy S27 Ultra", "shortLabel": "S27 Ultra", "manifest": "data/models/s27-ultra.json" }
+		{ "id": "s27-ultra", "label": "Samsung Galaxy S27 Family", "shortLabel": "S27 Family", "manifest": "data/models/s27-ultra.json" }
 	]
 }

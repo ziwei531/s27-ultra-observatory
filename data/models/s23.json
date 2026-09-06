@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"model": "s23",
 	"latest": "2026-09-06",
-	"timeline": null,
+	"timeline": "data/models/s23/timeline.json",
 	"snapshots": [
 		{ "id": "2026-09-06", "path": "data/models/s23/snapshots/2026-09-06.json", "title": "The S23 family leak record", "sha256": "16238263f56e4c9a58a0fe1ace031b732086534e672c009c789b744ba5d640c5" }
 	],

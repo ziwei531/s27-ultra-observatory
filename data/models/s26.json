@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"model": "s26",
 	"latest": "2026-09-06",
-	"timeline": null,
+	"timeline": "data/models/s26/timeline.json",
 	"snapshots": [
 		{ "id": "2026-09-06", "path": "data/models/s26/snapshots/2026-09-06.json", "title": "The S26 family leak record", "sha256": "82e721806cfc9e5f23ee6635287370c84a929b8bd358392ba93c58388285781a" }
 	],
