@@ -64,41 +64,27 @@ summary:hover { color: var(--accent); }
 	color: var(--accent);
 }
 
-.people > summary::after {
-	content: "+";
+.disclosure-icon {
+	width: .65rem;
+	height: .65rem;
 	margin-left: auto;
-	color: var(--accent);
-	font-size: 1.4rem;
-	font-weight: 400;
-	line-height: 1;
+	border-right: 2px solid var(--accent);
+	border-bottom: 2px solid var(--accent);
+	transform: rotate(45deg) translateY(-.15rem);
+	transition: transform .15s ease;
+}
+
+.people[open] > summary .disclosure-icon {
+	transform: rotate(225deg) translateY(-.15rem);
 }
 
 .people > summary strong {
 	font-size: 1.05rem;
 }
 
-.disclosure-hint {
-	margin-left: auto;
-	color: var(--muted);
-	font-size: .78rem;
-}
-
 .people[open] > summary {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
-}
-
-.people[open] > summary::after {
-	content: "−";
-}
-
-.people[open] > summary .disclosure-hint {
-	font-size: 0;
-}
-
-.people[open] > summary .disclosure-hint::after {
-	content: "Collapse panel";
-	font-size: .78rem;
 }
 
 .people {
