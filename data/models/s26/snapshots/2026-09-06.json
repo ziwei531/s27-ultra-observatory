@@ -1,0 +1,11 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S26 family leak record",
+	"summary": "A retrospective report on the Galaxy S26, S26+ and S26 Ultra leak cycle.",
+	"leadClaimId": "s26-family-specs",
+	"claims": [ { "id": "s26-family-specs", "title": "The complete S26 family specifications leaked before launch", "category": "Performance", "status": "reported", "confidence": "medium", "sourceDate": "2026-02-10", "firstObservedAt": "2026-09-06", "summary": "9to5Google reported leaked WinFuture data sheets for the Galaxy S26, S26+ and S26 Ultra, including regional Exynos 2600 versus Snapdragon 8 Elite Gen 5 processors, displays, charging, batteries and cameras.", "assessment": "A named underlying data-sheet source made this a substantial family report, but it remained pre-launch leaked material at publication.", "evidence": [ { "sourceId": "s26-9to5", "relation": "supports" } ], "related": [], "supersededBy": null } ],
+	"sources": [ { "id": "s26-9to5", "publisher": "9to5Google", "title": "Galaxy S26 fully leaked specs temper big expectations for battery, display", "url": "https://9to5google.com/2026/02/10/galaxy-s26-full-specs-leak/", "dateType": "published", "date": "2026-02-10", "accessedAt": "2026-09-06", "kind": "secondary", "provenance": "9to5Google reported WinFuture data sheets covering the entire S26 family." } ],
+	"images": [ { "path": "assets/optical-study.svg", "title": "Optical study", "creator": "S27 Ultra Observatory", "alt": "Abstract optical rings", "kind": "original-illustration", "license": "CC0-1.0", "sourceUrl": null, "disclaimer": "Original illustration, not a leaked device image." } ]
+}

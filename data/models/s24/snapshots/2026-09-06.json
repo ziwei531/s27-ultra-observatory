@@ -1,0 +1,11 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S24 family leak record",
+	"summary": "A retrospective report on the Galaxy S24, S24+ and S24 Ultra leak cycle.",
+	"leadClaimId": "s24-family-specs",
+	"claims": [ { "id": "s24-family-specs", "title": "A complete S24 family data sheet leaked before launch", "category": "Performance", "status": "reported", "confidence": "medium", "sourceDate": "2024-01-09", "firstObservedAt": "2026-09-06", "summary": "Notebookcheck reported a practically complete WinFuture data sheet for the Galaxy S24, S24+ and S24 Ultra, including regional processors, displays, cameras, batteries, storage and prices.", "assessment": "This was a broad pre-launch family report with a named underlying source. It is retained as historical leak coverage, not as a claim about what was known before the report.", "evidence": [ { "sourceId": "s24-notebookcheck", "relation": "supports" } ], "related": [], "supersededBy": null } ],
+	"sources": [ { "id": "s24-notebookcheck", "publisher": "Notebookcheck", "title": "Samsung Galaxy S24, S24+ and S24 Ultra: Leak reveals complete data sheets, colors and prices", "url": "https://www.notebookcheck.net/Samsung-Galaxy-S24-S24-and-S24-Ultra-Leak-reveals-complete-data-sheets-colors-and-prices.791539.0.html", "dateType": "published", "date": "2024-01-09", "accessedAt": "2026-09-06", "kind": "secondary", "provenance": "Notebookcheck reported a WinFuture data sheet covering all three S24 family models." } ],
+	"images": [ { "path": "assets/optical-study.svg", "title": "Optical study", "creator": "S27 Ultra Observatory", "alt": "Abstract optical rings", "kind": "original-illustration", "license": "CC0-1.0", "sourceUrl": null, "disclaimer": "Original illustration, not a leaked device image." } ]
+}

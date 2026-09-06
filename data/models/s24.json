@@ -1,0 +1,15 @@
+{
+	"schemaVersion": 1,
+	"model": "s24",
+	"latest": "2026-09-06",
+	"timeline": null,
+	"snapshots": [
+		{
+			"id": "2026-09-06",
+			"path": "data/models/s24/snapshots/2026-09-06.json",
+			"title": "The S24 family leak record",
+			"sha256": "2dab06b4c2eeba3ef48cc11b35eed71c5c8158391e4c698a97e6e8a2e661d6c5"
+		}
+	],
+	"checks": [ { "date": "2026-09-06", "outcome": "baseline", "notes": "Retrospective family report based on readable pre-launch coverage from January 2024." } ]
+}

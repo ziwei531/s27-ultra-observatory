@@ -1,0 +1,11 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S23 family leak record",
+	"summary": "A retrospective report on the Galaxy S23, S23+ and S23 Ultra leak cycle.",
+	"leadClaimId": "s23-family-design",
+	"claims": [ { "id": "s23-family-design", "title": "Early renders showed a shared S23 family design direction", "category": "Design", "status": "reported", "confidence": "medium", "sourceDate": "2022-09-28", "firstObservedAt": "2026-09-06", "summary": "XDA reported OnLeaks renders of the Galaxy S23 and described an updated camera-module design shared with the S23+ direction, alongside a flat display and rounded edges.", "assessment": "This is a whole-family design report anchored to named render material, while hardware details were still unknown at publication.", "evidence": [ { "sourceId": "s23-xda", "relation": "supports" } ], "related": [], "supersededBy": null } ],
+	"sources": [ { "id": "s23-xda", "publisher": "XDA", "title": "Early Galaxy S23 renders showcase an updated camera module design", "url": "https://www.xda-developers.com/galaxy-s23-leaked-renders/", "dateType": "published", "date": "2022-09-28", "accessedAt": "2026-09-06", "kind": "original-report", "provenance": "XDA reported OnLeaks renders and described the base S23 in the context of the family." } ],
+	"images": [ { "path": "assets/optical-study.svg", "title": "Optical study", "creator": "Galaxy Leak Observatory", "alt": "Abstract optical rings", "kind": "original-illustration", "license": "CC0-1.0", "sourceUrl": null, "disclaimer": "Original illustration, not a leaked device image." } ]
+}

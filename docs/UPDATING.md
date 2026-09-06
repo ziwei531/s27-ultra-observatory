@@ -6,27 +6,27 @@ Run from the repository root after reading `AGENTS.md`, the coding preferences a
 
 1. Check `git status --short`, pull `main` with fast-forward only, and query the current Asia/Kuala_Lumpur date.
 2. Read `data/index.json`, choose the model, then read its manifest, latest snapshot and `docs/RESEARCH.md`.
-3. Search broadly for the full model name plus the current month/year and check reputable Galaxy publishers and Samsung Newsroom. Fetch actual pages, seek the source behind reposts, and log access gaps.
+3. Search broadly for the full generation name plus its variants (`Galaxy S22`, `S22+`, `S22 Ultra`, and any Edge/FE model where relevant) and the current month/year. Do not reduce a family review to an Ultra-only query. Check reputable Galaxy publishers and Samsung Newsroom. Fetch actual pages, seek the source behind reposts, and log access gaps.
 4. Compare evidence by claim rather than headline. Preserve contradictions and keep rated versus typical battery units distinct.
 
-The root catalog defaults to `s27-ultra`. Pass another model explicitly when reviewing it:
+The root catalog defaults to `s27-ultra`. Family reviews use `s22`, `s23`, `s24`, `s25` or `s26`; pass the generation explicitly:
 
 ```sh
-npm run review:week -- YYYY-MM-DD --model=s23-ultra
+npm run review:week -- YYYY-MM-DD --model=s23
 ```
 
-This creates `.work/s23-ultra-YYYY-MM-DD.json`. A draft is only a copy, not new evidence.
+This creates `.work/s23-YYYY-MM-DD.json`. A draft is only a copy, not new evidence.
 
 After research and editing, publish a material update locally:
 
 ```sh
-npm run review:week -- YYYY-MM-DD --publish --model=s23-ultra --notes="Reviewed [sources and dates]; [material changes]; [access limitations]."
+npm run review:week -- YYYY-MM-DD --publish --model=s23 --notes="Reviewed [sources and dates]; [material changes]; [access limitations]."
 ```
 
 Or record an honestly completed no-change review without creating a snapshot:
 
 ```sh
-npm run review:week -- YYYY-MM-DD --no-change --model=s23-ultra --notes="Reviewed [sources and date range]; no material new evidence; [access limitations]."
+npm run review:week -- YYYY-MM-DD --no-change --model=s23 --notes="Reviewed [sources and date range]; no material new evidence; [access limitations]."
 ```
 
 Omit `--model` for the default S27 Ultra collection. The helper updates only the selected model manifest. It does not commit, push or claim deployment success.

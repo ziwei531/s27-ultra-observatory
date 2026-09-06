@@ -1,0 +1,11 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S25 family leak record",
+	"summary": "A retrospective report on the Galaxy S25, S25+ and S25 Ultra leak cycle.",
+	"leadClaimId": "s25-family-renders",
+	"claims": [ { "id": "s25-family-renders", "title": "Official-looking S25 family renders leaked before launch", "category": "Design", "status": "reported", "confidence": "medium", "sourceDate": "2025-01-10", "firstObservedAt": "2026-09-06", "summary": "Android Authority reported a set of official-looking renders for the Galaxy S25 lineup, covering the base S25, S25+ and S25 Ultra, with familiar designs and rounded Ultra corners.", "assessment": "The report described leaked renders and attributed the initial material to Android Headlines, with additional renders from Evan Blass. The final launch is separate from the pre-launch report.", "evidence": [ { "sourceId": "s25-aa", "relation": "supports" } ], "related": [], "supersededBy": null } ],
+	"sources": [ { "id": "s25-aa", "publisher": "Android Authority", "title": "A treasure trove of Galaxy S25 renders just leaked, including colorways", "url": "https://www.androidauthority.com/samsung-galaxy-s25-renders-3515569/", "dateType": "published", "date": "2025-01-10", "accessedAt": "2026-09-06", "kind": "original-report", "provenance": "Android Authority described renders for the S25, S25+ and S25 Ultra and named its reporting chain." } ],
+	"images": [ { "path": "assets/optical-study.svg", "title": "Optical study", "creator": "S27 Ultra Observatory", "alt": "Abstract optical rings", "kind": "original-illustration", "license": "CC0-1.0", "sourceUrl": null, "disclaimer": "Original illustration, not a leaked device image." } ]
+}

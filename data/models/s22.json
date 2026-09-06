@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"model": "s22",
+	"latest": "2026-09-06",
+	"timeline": null,
+	"snapshots": [
+		{
+			"id": "2026-09-06",
+			"path": "data/models/s22/snapshots/2026-09-06.json",
+			"title": "The S22 family leak record",
+			"sha256": "2c439d35de46bfac9a0015618f9d8500a3805dc60c447e56827bf1b809e20da5"
+		}
+	],
+	"checks": [
+		{
+			"date": "2026-09-06",
+			"outcome": "baseline",
+			"notes": "Retrospective family report based on readable pre-launch coverage from January 2022."
+		}
+	]
+}

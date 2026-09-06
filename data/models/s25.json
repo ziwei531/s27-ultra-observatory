@@ -1,0 +1,10 @@
+{
+	"schemaVersion": 1,
+	"model": "s25",
+	"latest": "2026-09-06",
+	"timeline": null,
+	"snapshots": [
+		{ "id": "2026-09-06", "path": "data/models/s25/snapshots/2026-09-06.json", "title": "The S25 family leak record", "sha256": "fb9ba7fa143f3039e86221838cfd1f09af68b5eb72581f97426def0170bec0dd" }
+	],
+	"checks": [ { "date": "2026-09-06", "outcome": "baseline", "notes": "Retrospective family report based on readable pre-launch coverage from January 2025." } ]
+}

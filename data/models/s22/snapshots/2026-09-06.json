@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S22 family leak record",
+	"summary": "A retrospective report on the Galaxy S22, S22+ and S22 Ultra leak cycle.",
+	"leadClaimId": "s22-family-specs",
+	"claims": [
+		{
+			"id": "s22-family-specs",
+			"title": "The full S22 family specification sheet leaked before launch",
+			"category": "Performance",
+			"status": "reported",
+			"confidence": "medium",
+			"sourceDate": "2022-01-26",
+			"firstObservedAt": "2026-09-06",
+			"summary": "XDA reported a complete WinFuture specification leak covering the Galaxy S22, S22+ and S22 Ultra, including regional Exynos 2200 versus Snapdragon 8 Gen 1 variants, displays, cameras, batteries and prices.",
+			"assessment": "A comprehensive pre-launch report covering the whole family. It remains a retrospective leak report; the source was not an official Samsung specification at the time.",
+			"evidence": [ { "sourceId": "s22-xda", "relation": "supports" } ],
+			"related": [],
+			"supersededBy": null
+		}
+	],
+	"sources": [
+		{
+			"id": "s22-xda",
+			"publisher": "XDA",
+			"title": "Everything about the Samsung Galaxy S22, S22 Plus, and S22 Ultra has just leaked",
+			"url": "https://www.xda-developers.com/samsung-galaxy-s22-series-leaks-entirely/",
+			"dateType": "published",
+			"date": "2022-01-26",
+			"accessedAt": "2026-09-06",
+			"kind": "secondary",
+			"provenance": "XDA’s readable report attributes the specification table to WinFuture."
+		}
+	],
+	"images": [
+		{
+			"path": "assets/optical-study.svg",
+			"title": "Optical study",
+			"creator": "S27 Ultra Observatory",
+			"alt": "Abstract optical rings",
+			"kind": "original-illustration",
+			"license": "CC0-1.0",
+			"sourceUrl": null,
+			"disclaimer": "Original illustration, not a leaked device image."
+		}
+	]
+}
