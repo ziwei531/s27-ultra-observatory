@@ -21,3 +21,4 @@
 - Added a Galaxy model selector. S27 Ultra remains the default; S23 Ultra selection loads only S23 reports and persists through a `model` URL parameter.
 - Generalized repository, site, package, local-server, live-verification and documentation naming to Galaxy Leak Observatory.
 - The static build, historical-snapshot protection, direct catalog/model behavior checks and `git diff --check` pass locally. Automated test and browser-test infrastructure was removed as disproportionate for this simple static project.
+- Renamed the repository to `galaxy-leak-observatory` and the local checkout to match. Pages workflow [34006959052](https://github.com/ziwei531/galaxy-leak-observatory/actions/runs/34006959052) passed build, deploy and exact live read-back for commit `a42fb4b520eb6fbb1d4a03cf7875c916f3ae498e`.
