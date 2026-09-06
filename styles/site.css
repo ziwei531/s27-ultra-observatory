@@ -93,6 +93,14 @@ summary:hover { color: var(--accent); }
 	border: 0;
 }
 
+.people-content {
+	padding: 1rem;
+	border: 1px solid var(--line);
+	border-top: 0;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	background: #fff;
+}
 .people-heading {
 	display: flex;
 	align-items: end;
