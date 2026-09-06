@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"model": "s23-ultra",
+	"latest": "2026-09-06",
+	"timeline": null,
+	"snapshots": [
+		{
+			"id": "2026-09-06",
+			"path": "data/models/s23-ultra/snapshots/2026-09-06.json",
+			"title": "The S23 Ultra leak record",
+			"sha256": "249f0d08a2e0f69cd2adc4fb3c46228de83586c5171eb06f47d061381b9336f1"
+		}
+	],
+	"checks": [
+		{
+			"date": "2026-09-06",
+			"outcome": "baseline",
+			"notes": "Retrospective collection of eight readable reports from the S23 Ultra leak cycle, with Samsung launch evidence used to record later outcomes."
+		}
+	]
+}

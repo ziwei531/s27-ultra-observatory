@@ -1,19 +1,23 @@
 <a class="skip-link" href="#reports">Skip to reports</a>
 <header class="site-header">
 	<div class="wrap header-inner">
-		<a class="wordmark" href="./" aria-label="S27 Ultra Observatory home">S27 ULTRA <span>OBSERVATORY</span></a>
+		<a class="wordmark" href="./" aria-label="Galaxy Leak Observatory home">GALAXY LEAK <span>OBSERVATORY</span></a>
 		<a class="header-link" href="data/index.json">Open JSON ↗</a>
 	</div>
 </header>
 <main class="wrap">
 	<section class="intro" aria-labelledby="page-title">
-		<p class="eyebrow">Samsung Galaxy S27 Ultra</p>
+		<p class="eyebrow" id="model-name">Samsung Galaxy S27 Ultra</p>
 		<h1 id="page-title">Reports</h1>
-		<p class="intro-copy">A readable archive of the latest S27 Ultra leak reports, with the original sources kept close at hand.</p>
+		<p class="intro-copy">A readable archive of Galaxy leak reports across generations, with original sources and later outcomes kept close at hand.</p>
 	</section>
 	<section class="report-tools" aria-labelledby="tools-title">
 		<h2 id="tools-title" class="sr-only">Find reports</h2>
 		<form id="filters" role="search">
+			<div class="sort-field">
+				<label for="model">Galaxy model</label>
+				<select id="model" name="model"></select>
+			</div>
 			<div class="search-field">
 				<label for="search">Search reports</label>
 				<input id="search" name="q" type="search" placeholder="Search titles or summaries" autocomplete="off" maxlength="300">
@@ -30,7 +34,7 @@
 	<p class="error" id="load-error" role="alert" hidden></p>
 	<section id="reports" class="reports" aria-labelledby="reports-title">
 		<div class="reports-heading">
-			<div><p class="eyebrow">S27 Ultra reports</p><h2 id="reports-title">Latest reporting</h2></div>
+			<div><p class="eyebrow" id="reports-model">S27 Ultra reports</p><h2 id="reports-title">Latest reporting</h2></div>
 			<p id="result-count" role="status" aria-live="polite">Loading reports…</p>
 		</div>
 		<div id="report-list"></div>

@@ -1,9 +1,11 @@
 import { filterReports, formatDate, readFilters, safeSourceUrl } from "./model.js?v=__BUILD_VERSION__";
 
 const elements = Object.fromEntries( [
-	  "filters", "search", "sort", "result-count", "report-list", "empty", "load-error"
+	  "filters", "model", "search", "sort", "model-name", "reports-model", "result-count", "report-list", "empty", "load-error"
 ].map( ( id ) => [ id, document.getElementById( id ) ] ) );
+let catalog;
 let currentSnapshot;
+let selectedModel;
 
 function createElement( tag, text, className = "" ) {
 	const element = document.createElement( tag );
@@ -52,14 +54,15 @@ function renderReport( report ) {
 }
 
 function getFilters() {
-	return { q: elements.search.value, sort: elements.sort.value };
+	return { model: elements.model.value, q: elements.search.value, sort: elements.sort.value };
 }
 
 function syncUrl() {
 	const url = new URL( location.href );
 	url.search = "";
 	for ( const [ key, value ] of Object.entries( getFilters() ) ) {
-		if ( value && value !== "newest" ) {
+		const isDefault = ( key === "model" && value === catalog.defaultModel ) || ( key === "sort" && value === "newest" );
+		if ( value && !isDefault ) {
 			url.searchParams.set( key, value );
 		}
 	}
@@ -74,26 +77,51 @@ function renderResults() {
 	syncUrl();
 }
 
-function restoreLocation() {
-	const filters = readFilters( location.search );
+async function loadModel( modelId ) {
+	selectedModel = catalog.models.find( ( model ) => model.id === modelId );
+	const manifest = await fetchJson( selectedModel.manifest );
+	const entry    = manifest.snapshots.find( ( snapshot ) => snapshot.id === manifest.latest );
+	const snapshot = await fetchJson( entry.path );
+	const timeline = manifest.timeline ? await fetchJson( manifest.timeline ) : { reports: [], sources: [] };
+	currentSnapshot = {
+		...snapshot
+		, claims : [ ...timeline.reports, ...snapshot.claims ]
+		, sources: [ ...timeline.sources, ...snapshot.sources ]
+	};
+	elements[ "model-name" ].textContent   = selectedModel.label;
+	elements[ "reports-model" ].textContent = `${ selectedModel.shortLabel } reports`;
+	renderResults();
+}
+
+async function selectModel() {
+	try {
+		await loadModel( elements.model.value );
+	} catch {
+		elements[ "load-error" ].textContent = "The selected model reports could not be loaded. Reload to try again, or open the JSON data directly.";
+		elements[ "load-error" ].hidden = false;
+		elements[ "result-count" ].textContent = "Reports unavailable";
+	}
+}
+
+async function restoreLocation() {
+	const filters = readFilters( location.search, catalog.models, catalog.defaultModel );
+	elements.model.value  = filters.model;
 	elements.search.value = filters.q;
 	elements.sort.value   = filters.sort;
-	renderResults();
+	await loadModel( filters.model );
 }
 
 async function initializeArchive() {
 	try {
-		const catalog = await fetchJson( "data/index.json" );
-		const entry   = catalog.snapshots.find( ( snapshot ) => snapshot.id === catalog.latest );
-		const snapshot = await fetchJson( entry.path );
-		const timeline = await fetchJson( "data/early-timeline.json" );
-		currentSnapshot = {
-			...snapshot
-			, claims : [ ...timeline.reports, ...snapshot.claims ]
-			, sources: [ ...timeline.sources, ...snapshot.sources ]
-		};
-		restoreLocation();
+		catalog = await fetchJson( "data/index.json" );
+		for ( const model of catalog.models ) {
+			const option = createElement( "option", model.shortLabel );
+			option.value = model.id;
+			elements.model.append( option );
+		}
+		await restoreLocation();
 		elements.filters.addEventListener( "submit", ( event ) => event.preventDefault() );
+		elements.model.addEventListener( "change", selectModel );
 		elements.search.addEventListener( "input", renderResults );
 		elements.sort.addEventListener( "change", renderResults );
 		window.addEventListener( "popstate", restoreLocation );

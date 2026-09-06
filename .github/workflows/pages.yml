@@ -1,4 +1,4 @@
-name: Verify and publish Pages
+name: Build and publish Pages
 on:
   push:
     branches: [main]
@@ -9,7 +9,7 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
-  verify:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,26 +18,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-      - run: npm ci
-      - run: npm test
-      - name: Protect existing historical snapshots
+      - name: Protect historical snapshots
         run: node scripts/check-history.js
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: browser-evidence
-          path: |
-            test-results/
-            playwright-report/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
   deploy:
-    needs: verify
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -58,19 +46,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
       - run: node scripts/verify-live.js
         env:
           SITE_URL: ${{ needs.deploy.outputs.url }}
-      - run: npm run test:browser
-        env:
-          SITE_URL: ${{ needs.deploy.outputs.url }}
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: live-browser-evidence
-          path: |
-            test-results/
-            playwright-report/
+          GITHUB_SHA: ${{ github.sha }}

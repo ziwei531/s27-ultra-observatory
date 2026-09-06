@@ -1,24 +1,23 @@
-# Baseline research — 6 September 2026 (UTC+08:00)
+# Model research record
 
-Tool clock: 2026-09-06T00:25:50+08:00. Collection is selective, not exhaustive.
+Collections are selective, not exhaustive. Search results are discovery only; every included source was fetched and read.
 
-Searches: “Galaxy S27 Ultra leaks”; “Galaxy S27 Ultra September 2026 camera battery leaks”; exact September 2026 query; publisher-specific SamMobile and Android Authority queries. Search engines returned irrelevant astronomy results and speculative shopping listings: excluded. Geeky Gadgets, automated price/spec listings and undated aggregations were not used as evidence.
+## Galaxy S27 Ultra baseline — 6 September 2026
 
-Eight readable sources and their dates, canonical URLs, provenance and access dates are in `data/snapshots/2026-09-06.json`. All were actually fetched and read. Primary report means original journalistic reporting, not official Samsung evidence.
+Eight readable sources and their dates, canonical URLs, provenance and access dates are in `data/snapshots/2026-09-06.json`. The earlier-report search is separately documented in `data/early-timeline.json`.
 
-## Editorial findings
+Key unresolved findings include regional Exynos development versus Snapdragon-only expectations, three versus four rear cameras, and the distinction between a 5,534 mAh rated battery report and higher estimated typical capacity. No S27 specification is marked confirmed.
 
-- September 1 Money Today Korean reporting describes Exynos Ultra mainboard orders alongside ongoing Snapdragon development. September 2 Android Authority discusses regional Exynos variants. This challenges Snapdragon-only expectations, not the existence of a Snapdragon model. Internal performance percentages excluded: no independent benchmark artifacts examined.
-- August 25 SamMobile (updated date, not asserted original publication date) describes OnLeaks-based CAD imagery via Android Headlines. Android Headlines itself was captcha-blocked. August 24 Android Authority describes Sonny Dickson imagery. Neither publisher's images are licensed for our reuse; original abstract artwork replaces device imagery, conspicuously labeled.
-- Three versus four rear cameras remains disputed between August 25 and August 1 reports. No invented resolution or supersession.
-- July 27 GalaxyClub directly reports 5,534 mAh rated, then estimates a higher advertised capacity. Its Dutch second “rated” wording appears inconsistent. Android Authority interprets 5,700 mAh as typical; our wording retains uncertainty rather than “correcting” the original into a confirmed specification.
-- Silicon-carbon inference is separate from battery capacity. Reprints of GalaxyClub are not independent corroboration.
-- The archive has no official confirmed specifications. This states the evidence set, not a claim that every Samsung page was exhaustively searched.
+The original Android Headlines design report was captcha-blocked; readable secondary coverage is labeled accordingly. Publisher images were not reused.
 
-## History integrity
+## Galaxy S23 Ultra retrospective — 6 September 2026
 
-Only one baseline snapshot exists. Article dates reach back into July; these are NOT historical archive snapshots. No prior observation was fabricated. Superseded and confirmed are supported states with no entries at baseline.
+Eight readable sources from August 2022 through the 1 February 2023 announcement are in `data/models/s23-ultra/snapshots/2026-09-06.json`.
 
-## Access limitations
+The record covers the 200-megapixel camera, familiar CAD design, reduced display curvature, 5,000 mAh typical battery, Snapdragon 8 Gen 2 for Galaxy, 45-watt charging, 12-megapixel selfie camera and pre-release color names. Samsung Newsroom U.K. launch material is used as official evidence for eventual outcomes; it does not retroactively turn secondary leak chains into independent primary evidence.
 
-Default web_search failed because ddgs was unavailable; DonSeTch search/fetch worked. Original Android Headlines blocked by captcha; readable secondary SamMobile is explicitly labeled. No captcha bypass. Browser helper fails on native Android psutil; rendered verification will use GitHub-hosted Chromium, without changing the Hermes runtime.
+The broad hardware predictions were mostly accurate. The leaked Cotton Flower, Botanic Green and Misty Lilac labels did not match Samsung’s final Cream, Green and Lavender names, so that claim remains explicitly disputed. Typical and rated battery capacities are kept distinct.
+
+## Integrity rule
+
+A retrospective collection date is not a claim that the archive observed a report before launch. `firstObservedAt` records when this archive collected the material; `sourceDate` preserves when the source published it. Existing snapshots remain immutable after publication.

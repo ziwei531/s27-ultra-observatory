@@ -8,7 +8,7 @@ const mime = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css
 const server = createServer( async ( request, response ) => {
 	try {
 		const url      = new URL( request.url, "http://localhost" );
-		const relative = decodeURIComponent( url.pathname ).replace( /^\/s27-ultra-observatory(?=\/)/, "" );
+		const relative = decodeURIComponent( url.pathname ).replace( /^\/galaxy-leak-observatory(?=\/)/, "" );
 		const path     = resolve( root, `.${ relative.endsWith( "/" ) ? `${ relative }index.html` : relative }` );
 		if ( !path.startsWith( `${ root }${ sep }` ) ) {
 			response.writeHead( 403 ).end();
@@ -21,4 +21,4 @@ const server = createServer( async ( request, response ) => {
 		response.writeHead( 404 ).end( "Not found" );
 	}
 } );
-server.listen( port, "127.0.0.1", () => console.log( `Ready: http://127.0.0.1:${ port }/s27-ultra-observatory/` ) );
+server.listen( port, "127.0.0.1", () => console.log( `Ready: http://127.0.0.1:${ port }/galaxy-leak-observatory/` ) );

@@ -1,19 +1,18 @@
 {
-	"schemaVersion": 1,
-	"latest": "2026-09-06",
-	"snapshots": [
+	"schemaVersion": 2,
+	"defaultModel": "s27-ultra",
+	"models": [
 		{
-			"id": "2026-09-06",
-			"path": "data/snapshots/2026-09-06.json",
-			"title": "The first field notes",
-			"sha256": "7dd579727bf29a6b1409c3108ade2a4c4835c0ea868c8f49870fc5c974252b27"
-		}
-	],
-	"checks": [
+			"id": "s27-ultra",
+			"label": "Samsung Galaxy S27 Ultra",
+			"shortLabel": "S27 Ultra",
+			"manifest": "data/models/s27-ultra.json"
+		},
 		{
-			"date": "2026-09-06",
-			"outcome": "baseline",
-			"notes": "Initial collection: eight readable reports; Android Headlines blocked. Broad and publisher-specific fresh searches completed. Not an exhaustive inventory of every rumor."
+			"id": "s23-ultra",
+			"label": "Samsung Galaxy S23 Ultra",
+			"shortLabel": "S23 Ultra",
+			"manifest": "data/models/s23-ultra.json"
 		}
 	]
 }

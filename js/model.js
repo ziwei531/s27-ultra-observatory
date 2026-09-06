@@ -1,5 +1,5 @@
-export const categories = [ "Design", "Cameras", "Battery", "Performance", "Display", "Charging" ];
-export const statuses   = [ "reported", "disputed", "superseded", "confirmed" ];
+export const categories  = [ "Design", "Cameras", "Battery", "Performance", "Display", "Charging" ];
+export const statuses    = [ "reported", "disputed", "superseded", "confirmed" ];
 export const confidences = [ "low", "medium", "high" ];
 
 export function formatDate( date ) {
@@ -17,11 +17,14 @@ export function filterReports( snapshot, filters ) {
 	} );
 }
 
-export function readFilters( search ) {
+export function readFilters( search, models = [], defaultModel = "s27-ultra" ) {
 	const parameters = new URLSearchParams( search );
+	const requested  = parameters.get( "model" );
+	const modelIds   = new Set( models.map( ( model ) => model.id ) );
 	return {
-		  q   : ( parameters.get( "q" ) ?? "" ).slice( 0, 300 )
-		, sort: parameters.get( "sort" ) === "oldest" ? "oldest" : "newest"
+		  model: modelIds.has( requested ) ? requested : defaultModel
+		, q    : ( parameters.get( "q" ) ?? "" ).slice( 0, 300 )
+		, sort : parameters.get( "sort" ) === "oldest" ? "oldest" : "newest"
 	};
 }
 

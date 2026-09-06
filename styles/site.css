@@ -25,7 +25,7 @@ h3 { font-size: clamp(1.25rem, 2.1vw, 1.65rem); }
 .eyebrow { color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
 .intro-copy { color: var(--muted); font-size: 18px; max-width: 56ch; margin-top: 18px; }
 .report-tools { border-block: 1px solid var(--line); padding: 22px 0; }
-#filters { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; align-items: end; }
+#filters { display: grid; grid-template-columns: 220px minmax(0, 1fr) 220px; gap: 20px; align-items: end; }
 label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 7px; }
 .reports { padding: 48px 0 80px; }
 .reports-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 2px solid var(--ink); }

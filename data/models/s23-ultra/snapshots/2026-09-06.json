@@ -1,0 +1,250 @@
+{
+	"schemaVersion": 1,
+	"id": "2026-09-06",
+	"observedAt": "2026-09-06",
+	"title": "The S23 Ultra leak record",
+	"summary": "A retrospective record of major S23 Ultra reports from August 2022 through launch, paired with Samsung’s announcement so old predictions keep their eventual outcomes.",
+	"leadClaimId": "200mp-main-camera",
+	"claims": [
+		{
+			"id": "200mp-main-camera",
+			"title": "The 200-megapixel main camera arrived",
+			"category": "Cameras",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2022-08-25",
+			"firstObservedAt": "2026-09-06",
+			"summary": "Notebookcheck and GSMArena relayed Ice Universe’s 200-megapixel sensor reports, while Android Central separately relayed Yogesh Brar’s 200-megapixel main-camera specification. Samsung’s launch material subsequently specified a 200-megapixel Adaptive Pixel main camera.",
+			"assessment": "The central resolution claim was confirmed at launch. Early sensor-name details remained less consistent than the 200-megapixel headline.",
+			"evidence": [
+				{ "sourceId": "nb-early-camera", "relation": "supports" },
+				{ "sourceId": "gsmarena-camera-sample", "relation": "supports" },
+				{ "sourceId": "ac-camera-specs", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [],
+			"supersededBy": null
+		},
+		{
+			"id": "familiar-camera-layout",
+			"title": "CAD renders showed an S22 Ultra-like silhouette",
+			"category": "Design",
+			"status": "reported",
+			"confidence": "medium",
+			"sourceDate": "2022-09-28",
+			"firstObservedAt": "2026-09-06",
+			"summary": "CAD-based renders published by OnLeaks and Smartprix showed a design close to the S22 Ultra, retaining the separate camera rings, flat top and bottom edges, and a slightly flatter side profile.",
+			"assessment": "The renders proved broadly representative, but the archived evidence remains a pre-release CAD report rather than an official design file.",
+			"evidence": [
+				{ "sourceId": "9to5-cad-renders", "relation": "supports" }
+			],
+			"related": [ "reduced-display-curvature" ],
+			"supersededBy": null
+		},
+		{
+			"id": "reduced-display-curvature",
+			"title": "A flatter display surface was correctly anticipated",
+			"category": "Display",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2022-08-25",
+			"firstObservedAt": "2026-09-06",
+			"summary": "Notebookcheck relayed Ice Universe’s claim of less pronounced curvature. Samsung later described the 6.8-inch edge display as having reduced curvature and a larger, flatter usable surface.",
+			"assessment": "The directional design claim was confirmed by Samsung, without treating an early render as an exact production blueprint.",
+			"evidence": [
+				{ "sourceId": "nb-early-camera", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [ "familiar-camera-layout" ],
+			"supersededBy": null
+		},
+		{
+			"id": "5000mah-battery",
+			"title": "The 5,000 mAh battery report held",
+			"category": "Battery",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2022-08-04",
+			"firstObservedAt": "2026-09-06",
+			"summary": "SamMobile reported that Samsung would retain a 5,000 mAh typical battery capacity. Samsung’s launch specification later listed 5,000 mAh typical and 4,855 mAh rated capacity.",
+			"assessment": "The reported typical capacity was confirmed. Typical and rated capacities remain distinct measurements.",
+			"evidence": [
+				{ "sourceId": "sm-battery-chipset", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [],
+			"supersededBy": null
+		},
+		{
+			"id": "snapdragon-for-galaxy",
+			"title": "The custom Snapdragon branding was real",
+			"category": "Performance",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2023-01-27",
+			"firstObservedAt": "2026-09-06",
+			"summary": "Leaked marketing material shown by Roland Quandt carried the Snapdragon 8 Gen 2 for Galaxy name. Samsung’s launch announcement confirmed that optimized platform across the Galaxy S23 series.",
+			"assessment": "Both the custom branding and the chipset generation were confirmed by official launch material.",
+			"evidence": [
+				{ "sourceId": "aa-custom-snapdragon", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [],
+			"supersededBy": null
+		},
+		{
+			"id": "45w-wired-charging",
+			"title": "45-watt wired charging stayed unchanged",
+			"category": "Charging",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2023-01-13",
+			"firstObservedAt": "2026-09-06",
+			"summary": "Pre-launch reporting listed 45-watt wired charging for the S23 Ultra. Samsung’s final specification also listed a 45-watt adapter and 5-amp USB-C cable for wired charging.",
+			"assessment": "The charging ceiling was confirmed; the adapter was sold separately and real charging behavior depends on the supported cable and charger.",
+			"evidence": [
+				{ "sourceId": "xda-colors-specs", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [],
+			"supersededBy": null
+		},
+		{
+			"id": "12mp-selfie-camera",
+			"title": "The Ultra moved to a 12-megapixel selfie camera",
+			"category": "Cameras",
+			"status": "confirmed",
+			"confidence": "high",
+			"sourceDate": "2023-01-27",
+			"firstObservedAt": "2026-09-06",
+			"summary": "A leaked comparison sheet reported by Android Authority showed a 12-megapixel front camera instead of the previous Ultra’s 40-megapixel count. Samsung’s launch specifications confirmed the 12-megapixel selfie camera.",
+			"assessment": "The resolution was confirmed. Calling it a downgrade based only on pixel count was an interpretation, not a measured image-quality result.",
+			"evidence": [
+				{ "sourceId": "aa-custom-snapdragon", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "supports" }
+			],
+			"related": [],
+			"supersededBy": null
+		},
+		{
+			"id": "color-names",
+			"title": "Leaked color labels did not match the launch names",
+			"category": "Design",
+			"status": "disputed",
+			"confidence": "medium",
+			"sourceDate": "2023-01-13",
+			"firstObservedAt": "2026-09-06",
+			"summary": "XDA relayed render labels of Cotton Flower, Botanic Green and Misty Lilac alongside Phantom Black. Samsung launched the corresponding main range as Cream, Green, Lavender and Phantom Black.",
+			"assessment": "The visual palette was directionally close, but the reported retail names were not the final announced names.",
+			"evidence": [
+				{ "sourceId": "xda-colors-specs", "relation": "supports" },
+				{ "sourceId": "samsung-launch", "relation": "contradicts" }
+			],
+			"related": [ "familiar-camera-layout" ],
+			"supersededBy": null
+		}
+	],
+	"sources": [
+		{
+			"id": "nb-early-camera",
+			"publisher": "Notebookcheck",
+			"title": "Samsung Galaxy S23 Ultra: Leaker reports camera design finalisation and subtle ergonomics change",
+			"date": "2022-08-25",
+			"dateType": "published",
+			"url": "https://www.notebookcheck.net/Samsung-Galaxy-S23-Ultra-Leaker-reports-camera-design-finalisation-and-subtle-ergonomics-change.642739.0.html",
+			"kind": "secondary",
+			"provenance": "Ice Universe posts about a Samsung 200-megapixel sensor, retained camera layout and reduced chassis curvature.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "sm-battery-chipset",
+			"publisher": "SamMobile",
+			"title": "Samsung Galaxy S23 Ultra battery and chipset details leak",
+			"date": "2022-08-04",
+			"dateType": "updated",
+			"url": "https://www.sammobile.com/news/samsung-galaxy-s23-ultra-battery-chipset-details-leak/",
+			"kind": "secondary",
+			"provenance": "Weibo reporting relayed by SamMobile; the original post was not independently preserved in this archive.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "9to5-cad-renders",
+			"publisher": "9to5Google",
+			"title": "The Galaxy S23 Ultra looks basically identical to the S22 Ultra in first leaked renders [Gallery]",
+			"date": "2022-09-28",
+			"dateType": "published",
+			"url": "https://9to5google.com/2022/09/28/galaxy-s23-ultra-design/",
+			"kind": "secondary",
+			"provenance": "OnLeaks CAD-based renders published with Smartprix; CAD details can differ from final production hardware.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "ac-camera-specs",
+			"publisher": "Android Central",
+			"title": "Samsung Galaxy S23 Ultra leaks detail impressive camera specs as its new SoC appears",
+			"date": "2022-11-03",
+			"dateType": "published",
+			"url": "https://www.androidcentral.com/phones/samsung-galaxy-s23-ultra-camera-plus-soc-specs-leak",
+			"kind": "secondary",
+			"provenance": "Yogesh Brar’s camera specification post, with separate chipset benchmark context for the S23+.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "gsmarena-camera-sample",
+			"publisher": "GSMArena",
+			"title": "Samsung Galaxy S23 Ultra's first leaked camera sample shows great improvement over S22 Ultra",
+			"date": "2022-10-28",
+			"dateType": "published",
+			"url": "https://www.gsmarena.com/samsung_galaxy_s23_ultra_trounces_s22_ultra_camera_in_first_leaked_photo-news-56326.php",
+			"kind": "secondary",
+			"provenance": "Ice Universe prototype sample and sensor-detail claims; image-quality language is the publisher’s assessment of one sample.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "aa-custom-snapdragon",
+			"publisher": "Android Authority",
+			"title": "New Galaxy S23 leak appears to further confirm custom Snapdragon 8 Gen 2 chip",
+			"date": "2023-01-27",
+			"dateType": "published",
+			"url": "https://www.androidauthority.com/galaxy-s23-snapdragon-3272958/",
+			"kind": "secondary",
+			"provenance": "Roland Quandt images of apparent marketing and comparison materials before launch.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "xda-colors-specs",
+			"publisher": "XDA",
+			"title": "Samsung Galaxy S23 Ultra renders reveal all the flashy new colors",
+			"date": "2023-01-13",
+			"dateType": "published",
+			"url": "https://www.xda-developers.com/samsung-galaxy-s23-ultra-leaked-renders-colors/",
+			"kind": "secondary",
+			"provenance": "Nieuwemobiel renders and earlier promotional-image reports, plus a roundup of then-unconfirmed specifications.",
+			"accessedAt": "2026-09-06"
+		},
+		{
+			"id": "samsung-launch",
+			"publisher": "Samsung Newsroom U.K.",
+			"title": "Take Your Passions Further with the New Samsung Galaxy S23 Series: Designed for a Premium Experience Today and Beyond",
+			"date": "2023-02-01",
+			"dateType": "published",
+			"url": "https://news.samsung.com/uk/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond",
+			"kind": "official",
+			"provenance": "Samsung’s launch announcement and specification table, used only to record eventual outcomes of earlier reports.",
+			"accessedAt": "2026-09-06"
+		}
+	],
+	"images": [
+		{
+			"id": "optical-study",
+			"path": "assets/optical-study.svg",
+			"title": "Optical study 01",
+			"creator": "Galaxy Leak Observatory",
+			"license": "CC0-1.0",
+			"sourceUrl": null,
+			"kind": "original-illustration",
+			"alt": "Abstract concentric optical rings and a rust-colored alignment line on a dark field.",
+			"disclaimer": "Original illustration, not a leaked render or a prediction of any phone’s design."
+		}
+	]
+}

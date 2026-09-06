@@ -1,68 +1,65 @@
-# Weekly editorial update runbook
+# Editorial update runbook
 
-Run from the repository root after reading `AGENTS.md`, the coding preferences and `context/source-guidelines.md`. A scheduled agent must actually search and fetch sources; scripts do not manufacture “new leaks”. Do not create a snapshot solely because a week elapsed.
+Run from the repository root after reading `AGENTS.md`, the coding preferences and `context/source-guidelines.md`. Scripts never manufacture evidence, and elapsed time alone never justifies a new snapshot.
 
-## Exact recommended scheduled-agent process
+## Model-aware review
 
-1. `git status --short` — stop on someone else's changes. `git pull --ff-only origin main`. Run `date -Iseconds`; use the current **Asia/Kuala_Lumpur** collection date, never an article's earlier date.
-2. Read `data/index.json`, its latest snapshot, `docs/RESEARCH.md`, and these source rules. Search broadly for `Galaxy S27 Ultra leaks` plus the current month/year; also search Samsung Newsroom, SamMobile, Android Authority, Android Central, GalaxyClub and 9to5Google. Seek original reports behind reposts. Fetch/read the actual pages and record publication/updated and access dates. Do not rely on snippets. Exclude inaccessible or fabricated-spec aggregator pages; log failures honestly.
-3. Compare with the current snapshot by claim, not headline. Check camera count, regional processors, battery rated/typical units, charging/certification, display and official announcements. Add contradictory evidence without deleting the older account. Never turn repeated coverage of one tip into independent corroboration. A review must describe sources attempted and any access gaps.
-4. **If material evidence changed**, make a draft (replace the date below with the real tool-observed date):
+1. Check `git status --short`, pull `main` with fast-forward only, and query the current Asia/Kuala_Lumpur date.
+2. Read `data/index.json`, choose the model, then read its manifest, latest snapshot and `docs/RESEARCH.md`.
+3. Search broadly for the full model name plus the current month/year and check reputable Galaxy publishers and Samsung Newsroom. Fetch actual pages, seek the source behind reposts, and log access gaps.
+4. Compare evidence by claim rather than headline. Preserve contradictions and keep rated versus typical battery units distinct.
 
-   ```sh
-   npm run review:week -- YYYY-MM-DD
-   ```
+The root catalog defaults to `s27-ultra`. Pass another model explicitly when reviewing it:
 
-   Edit `.work/YYYY-MM-DD.json`: replace the placeholder title/summary, add or revise claims and evidence, add fully read sources with dates/provenance. Keep existing `firstObservedAt` values; newly observed claims get the actual collection date. Source dates never become snapshot dates. Keep old sources needed by old claims. Superseded requires a valid `supersededBy`; confirmed requires supporting `kind: official` evidence. Confidence always has an explanation. Old snapshots are never edited.
+```sh
+npm run review:week -- YYYY-MM-DD --model=s23-ultra
+```
 
-   ```sh
-   npm run review:week -- YYYY-MM-DD --publish --notes="Reviewed [source URLs and dates]; [specific material changes]; [access limitations]."
-   ```
+This creates `.work/s23-ultra-YYYY-MM-DD.json`. A draft is only a copy, not new evidence.
 
-   This writes the new sealed snapshot and updates the catalog **locally only**. It does not commit, push, or assert successful deployment.
+After research and editing, publish a material update locally:
 
-5. **If nothing material changed**, do not create a snapshot and do not change any old snapshot:
+```sh
+npm run review:week -- YYYY-MM-DD --publish --model=s23-ultra --notes="Reviewed [sources and dates]; [material changes]; [access limitations]."
+```
 
-   ```sh
-   npm run review:week -- YYYY-MM-DD --no-change --notes="Reviewed [source URLs and date range]; no material new evidence; [access limitations]."
-   ```
+Or record an honestly completed no-change review without creating a snapshot:
 
-   Only `data/index.json` gains a completed no-change record; the visible collection date remains unchanged, while “Last review” advances. Repeated articles, spelling-only edits and access-date refreshes alone are NOT material changes. If research was blocked comprehensively, record the failure in `docs/PROGRESS.md`, not a completed no-change review; do not imply the news was checked.
+```sh
+npm run review:week -- YYYY-MM-DD --no-change --model=s23-ultra --notes="Reviewed [sources and date range]; no material new evidence; [access limitations]."
+```
 
-6. Add concise source/change findings to `docs/PROGRESS.md` (and `docs/RESEARCH.md` when needed). Run:
+Omit `--model` for the default S27 Ultra collection. The helper updates only the selected model manifest. It does not commit, push or claim deployment success.
 
-   ```sh
-   npm test
-   npm run build
-   git diff --check
-   git diff --stat
-   git diff -- data/index.json docs/PROGRESS.md
-   ```
+## Publication checks
 
-   Review the full new snapshot, check copyright/PII/secrets and test counts; no raw articles, credentials or copied publisher imagery. For artwork use original labeled illustration unless explicit redistribution rights are recorded and validation is deliberately updated.
-7. Commit only intended files using Conventional Commits, then push main:
+```sh
+npm run build
+node scripts/check-history.js
+git diff --check
+git diff --stat
+```
 
-   ```sh
-   git add data/index.json data/snapshots docs/PROGRESS.md docs/RESEARCH.md
-   git commit -m "content: review S27 Ultra evidence for YYYY-MM-DD"
-   git push origin main
-   gh run list --workflow pages.yml --limit 1
-   gh run watch RUN_ID --exit-status
-   GITHUB_SHA=$(git rev-parse HEAD) node scripts/verify-live.js
-   ```
+Review the full snapshot, copyright, personal data, secrets and validation output. Directly inspect the built catalog, model manifests and selected-model behavior. Keep old sources required by old claims. `superseded` needs a valid replacement; `confirmed` needs supporting official evidence. Existing snapshots are never rewritten.
 
-8. Completion means the `verify`, `deploy` **and** `verify-live` jobs passed, and the published JSON exactly matches disk. If the new site fails validation, report the blocker; never say published on the strength of a push alone. A post-deployment live-check failure may mean the site is already updated: inspect before retrying or reverting.
+This simple static project intentionally carries no automated test suite or browser-test framework. Keep checks proportionate and verify the deployed files directly.
 
-## Copyable scheduler task
+Commit only intended paths with a Conventional Commit, push `main`, wait for all Pages jobs, then verify the live commit and JSON:
 
-“Within `/data/data/com.termux/files/home/s27-ultra-observatory`, follow AGENTS.md and docs/UPDATING.md. Run the date tool, perform fresh S27 Ultra source research, add an immutable snapshot only for material evidence, otherwise record an honestly completed no-change review. Run tests, commit and push main, wait for all Pages workflow jobs, and verify live JSON against the commit. Report only real changes or blockers. Never fabricate history, renders, sources or a successful check.”
+```sh
+git push origin main
+gh run list --workflow pages.yml --limit 1
+GITHUB_SHA=$(git rev-parse HEAD) node scripts/verify-live.js
+```
 
-The repository intentionally contains no cron setup. The supervising agent may schedule this task separately. One completed review per date is supported. If the same day needs a correction before sealing, edit its uncommitted draft; after publication, use a later dated snapshot, leaving the original intact. Emergency application-code fixes need not create content snapshots.
+Completion means verify, deploy and verify-live all pass. A push alone is not publication proof.
 
-## Recovery and integrity
+## Adding another model
 
-- A draft is safe to edit or discard in `.work/`; this directory is ignored and never deployed.
-- The helper uses exclusive creation for snapshot files and a temporary catalog + rename. If interrupted between these two writes, an orphan snapshot may remain: stop, inspect it, and reconcile the uncommitted catalog before proceeding. Do not overwrite published snapshots.
-- Hash validation catches drift; the workflow also compares all preexisting snapshot files against the parent commit and rejects alterations/deletions. Do not defeat this by modifying the hash to match a rewrite.
-- For a new category or a new non-SVG license policy, update the model, validator, tests and documentation in one reviewed change.
-- No-change scripts trust your stated review; they do not verify that research occurred. The run notes must therefore be specific and auditable.
+1. Add its identifier, labels and manifest path to `data/index.json`.
+2. Create `data/models/MODEL-ID.json` and its immutable snapshot directory.
+3. Record real fetched sources, source dates and the archive’s actual observation date.
+4. Add tests proving its report count and strict isolation from every other model.
+5. Update research notes and run the complete publication checks.
+
+The repository intentionally contains no cron setup. Emergency application-code fixes need not create content snapshots.
