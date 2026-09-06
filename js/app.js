@@ -83,7 +83,16 @@ function renderLeakers( data ) {
 		const article = createElement( "article", "", "leaker" );
 		const heading = createElement( "div", "", "leaker-heading" );
 		heading.append( createElement( "h3", leaker.name ), createElement( "span", leaker.signal, `signal signal-${ leaker.signal }` ) );
-		article.append( heading, createElement( "p", leaker.handle, "leaker-handle" ), createElement( "p", leaker.focus, "leaker-focus" ), createElement( "p", leaker.note, "leaker-note" ) );
+		const handle = createElement( "p", "", "leaker-handle" );
+		if ( leaker.handleUrl ) {
+			const handleLink = createElement( "a", leaker.handle );
+			handleLink.href = safeSourceUrl( leaker.handleUrl );
+			handleLink.rel = "noreferrer noopener";
+			handle.append( handleLink );
+		} else {
+			handle.textContent = leaker.handle;
+		}
+		article.append( heading, handle, createElement( "p", leaker.focus, "leaker-focus" ), createElement( "p", leaker.note, "leaker-note" ) );
 		const sources = document.createElement( "ul" );
 		for ( const reference of leaker.references ) {
 			const link = createElement( "a", `${ reference.model }: ${ reference.title } ↗` );

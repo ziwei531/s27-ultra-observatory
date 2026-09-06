@@ -5,7 +5,8 @@
 	"leakers": [
 		{
 			"name": "Steve Hemmerstoffer",
-			"handle": "OnLeaks",
+			"handle": "@OnLeaks",
+			"handleUrl": "https://x.com/OnLeaks",
 			"signal": "high",
 			"focus": "CAD renders and industrial design",
 			"note": "Appears repeatedly behind early S22, S23 and S25 design renders. The archive treats CAD as useful shape evidence, not a final production blueprint.",
@@ -18,6 +19,7 @@
 		{
 			"name": "Ice Universe",
 			"handle": "@UniverseIce",
+			"handleUrl": "https://x.com/UniverseIce",
 			"signal": "high",
 			"focus": "Samsung specifications, cameras and displays",
 			"note": "Frequently attributed across the S22, S23 Ultra and S27 records for camera, display, battery and chipset claims. Individual claims still need separate verification.",
@@ -29,7 +31,8 @@
 		},
 		{
 			"name": "Evan Blass",
-			"handle": "@evleaks",
+			"handle": "@_evanblass_",
+			"handleUrl": "https://x.com/_evanblass_",
 			"signal": "high",
 			"focus": "Press renders and launch material",
 			"note": "The S25 archive records additional renders attributed to him, making him a notable source for official-looking pre-launch imagery rather than a general specification oracle.",
@@ -40,6 +43,7 @@
 		{
 			"name": "Yogesh Brar",
 			"handle": "@heyitsyogesh",
+			"handleUrl": "https://x.com/heyitsyogesh",
 			"signal": "medium",
 			"focus": "Camera and specification posts",
 			"note": "Named in S23 reporting for camera and chipset specifications. The archive keeps his claims distinct from later launch confirmation.",
@@ -50,6 +54,7 @@
 		{
 			"name": "Ross Young",
 			"handle": "@DSCCRoss",
+			"handleUrl": "https://x.com/DSCCRoss",
 			"signal": "medium",
 			"focus": "Display supply-chain and color claims",
 			"note": "The S23 archive cites him for an early limited-color prediction. This is a narrower signal than a complete device specification leak.",
@@ -58,8 +63,9 @@
 			]
 		},
 		{
-			"name": "Roland Quandt",
-			"handle": "@rquandt",
+			"name": "Robin Quandt",
+			"handle": "@RQuandt",
+			"handleUrl": "https://x.com/RQuandt",
 			"signal": "medium",
 			"focus": "Retail and marketing material",
 			"note": "The S23 archive attributes apparent Snapdragon marketing and comparison material to him. Material provenance matters more than the outlet repeating it.",
@@ -70,6 +76,7 @@
 		{
 			"name": "Tron",
 			"handle": "@FrontTron",
+			"handleUrl": "https://x.com/FrontTron",
 			"signal": "medium",
 			"focus": "Chipset and component specifications",
 			"note": "Named by Notebookcheck in the early S22 Exynos/AMD and Snapdragon regional specification trail. The archive records the regional uncertainty rather than treating it as certainty.",
@@ -79,7 +86,8 @@
 		},
 		{
 			"name": "Jukanlosreve",
-			"handle": "@Jukanlosreve",
+			"handle": "@Jukanlosreve (archived)",
+			"handleUrl": "https://web.archive.org/web/20250803104707/https://x.com/jukanlosreve",
 			"signal": "medium",
 			"focus": "Hands-on images and device hardware",
 			"note": "The S25 record attributes leaked S25+ hands-on images to this account, including the camera rings and US mmWave antenna.",
@@ -90,6 +98,7 @@
 		{
 			"name": "Sonny Dickson",
 			"handle": "@SonnyDickson",
+			"handleUrl": "https://x.com/SonnyDickson",
 			"signal": "medium",
 			"focus": "Prototype images and hardware appearance",
 			"note": "The S27 record attributes a wide camera-plateau image report to him. The archive treats image interpretation, such as possible Qi2 magnets, as unconfirmed.",
@@ -100,6 +109,7 @@
 		{
 			"name": "Anthony",
 			"handle": "@TheGalox_",
+			"handleUrl": "https://x.com/TheGalox_",
 			"signal": "low",
 			"focus": "Early specifications and rumor posts",
 			"note": "The S27 record attributes several early camera, display and chipset claims to this account, but the underlying posts were not independently preserved; it is listed for traceability, not endorsement.",
