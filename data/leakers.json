@@ -1,0 +1,121 @@
+{
+	"schemaVersion": 1,
+	"title": "Recurring individual leakers",
+	"disclaimer": "Archive-based reliability signal, not a guarantee. A person can be accurate on one claim and wrong on another; repeated coverage of the same post is not independent confirmation.",
+	"leakers": [
+		{
+			"name": "Steve Hemmerstoffer",
+			"handle": "OnLeaks",
+			"signal": "high",
+			"focus": "CAD renders and industrial design",
+			"note": "Appears repeatedly behind early S22, S23 and S25 design renders. The archive treats CAD as useful shape evidence, not a final production blueprint.",
+			"references": [
+				{ "model": "S22", "title": "S22 and S22+ renders", "url": "https://www.xda-developers.com/samsung-galaxy-s22-s22-plus-leak/" },
+				{ "model": "S23", "title": "Early S23 renders", "url": "https://www.xda-developers.com/galaxy-s23-leaked-renders/" },
+				{ "model": "S25", "title": "S25 design renders", "url": "https://9to5google.com/2024/09/12/samsung-galaxy-s25-design-leak/" }
+			]
+		},
+		{
+			"name": "Ice Universe",
+			"handle": "@UniverseIce",
+			"signal": "high",
+			"focus": "Samsung specifications, cameras and displays",
+			"note": "Frequently attributed across the S22, S23 Ultra and S27 records for camera, display, battery and chipset claims. Individual claims still need separate verification.",
+			"references": [
+				{ "model": "S22", "title": "Early S22 family specifications", "url": "https://www.notebookcheck.net/Galaxy-S22-series-New-leak-reveals-display-camera-and-battery-specifications-of-Samsung-s-next-gen-premium-phones.555484.0.html" },
+				{ "model": "S23", "title": "S23 Ultra camera and display reports", "url": "https://www.notebookcheck.net/Samsung-Galaxy-S23-Ultra-Leaker-reports-camera-design-finalisation-and-subtle-ergonomics-change.667199.0.html" },
+				{ "model": "S27", "title": "S27 Ultra camera layout report", "url": "https://www.notebookcheck.net/Exclusive-Samsung-Galaxy-S27-Ultra-will-only-get-a-triple-camera-according-to-a-leak.1070197.0.html" }
+			]
+		},
+		{
+			"name": "Evan Blass",
+			"handle": "@evleaks",
+			"signal": "high",
+			"focus": "Press renders and launch material",
+			"note": "The S25 archive records additional renders attributed to him, making him a notable source for official-looking pre-launch imagery rather than a general specification oracle.",
+			"references": [
+				{ "model": "S25", "title": "Additional S25 renders", "url": "https://www.androidauthority.com/samsung-galaxy-s25-renders-3515569/" }
+			]
+		},
+		{
+			"name": "Yogesh Brar",
+			"handle": "@heyitsyogesh",
+			"signal": "medium",
+			"focus": "Camera and specification posts",
+			"note": "Named in S23 reporting for camera and chipset specifications. The archive keeps his claims distinct from later launch confirmation.",
+			"references": [
+				{ "model": "S23", "title": "S23 specification leak", "url": "https://www.sammobile.com/news/galaxy-s23-specifications-leak/" }
+			]
+		},
+		{
+			"name": "Ross Young",
+			"handle": "@DSCCRoss",
+			"signal": "medium",
+			"focus": "Display supply-chain and color claims",
+			"note": "The S23 archive cites him for an early limited-color prediction. This is a narrower signal than a complete device specification leak.",
+			"references": [
+				{ "model": "S23", "title": "S23 launch-color report", "url": "https://beta.sammobile.com/news/galaxy-s23-colors-leaked/" }
+			]
+		},
+		{
+			"name": "Roland Quandt",
+			"handle": "@rquandt",
+			"signal": "medium",
+			"focus": "Retail and marketing material",
+			"note": "The S23 archive attributes apparent Snapdragon marketing and comparison material to him. Material provenance matters more than the outlet repeating it.",
+			"references": [
+				{ "model": "S23", "title": "Custom Snapdragon 8 Gen 2 material", "url": "https://www.androidauthority.com/samsung-galaxy-s23-snapdragon-8-gen-2-for-galaxy-3238218/" }
+			]
+		},
+		{
+			"name": "Tron",
+			"handle": "@FrontTron",
+			"signal": "medium",
+			"focus": "Chipset and component specifications",
+			"note": "Named by Notebookcheck in the early S22 Exynos/AMD and Snapdragon regional specification trail. The archive records the regional uncertainty rather than treating it as certainty.",
+			"references": [
+				{ "model": "S22", "title": "S22 chipset and display leak", "url": "https://www.notebookcheck.net/Galaxy-S22-series-New-leak-reveals-display-camera-and-battery-specifications-of-Samsung-s-next-gen-premium-phones.555484.0.html" }
+			]
+		},
+		{
+			"name": "Jukanlosreve",
+			"handle": "@Jukanlosreve",
+			"signal": "medium",
+			"focus": "Hands-on images and device hardware",
+			"note": "The S25 record attributes leaked S25+ hands-on images to this account, including the camera rings and US mmWave antenna.",
+			"references": [
+				{ "model": "S25", "title": "S25+ hands-on images", "url": "https://www.androidauthority.com/samsung-galaxy-s25-plus-leaked-hands-on-images-3509638/" }
+			]
+		},
+		{
+			"name": "Sonny Dickson",
+			"handle": "@SonnyDickson",
+			"signal": "medium",
+			"focus": "Prototype images and hardware appearance",
+			"note": "The S27 record attributes a wide camera-plateau image report to him. The archive treats image interpretation, such as possible Qi2 magnets, as unconfirmed.",
+			"references": [
+				{ "model": "S27", "title": "S27 Ultra camera image report", "url": "https://www.androidauthority.com/samsung-galaxy-s27-ultra-render-leak-3701790/" }
+			]
+		},
+		{
+			"name": "Anthony",
+			"handle": "@TheGalox_",
+			"signal": "low",
+			"focus": "Early specifications and rumor posts",
+			"note": "The S27 record attributes several early camera, display and chipset claims to this account, but the underlying posts were not independently preserved; it is listed for traceability, not endorsement.",
+			"references": [
+				{ "model": "S27", "title": "S27 Ultra camera and display claims", "url": "https://www.androidcentral.com/phones/samsung-galaxy/samsung-galaxy-s27-ultra-leak-reveals-massive-camera-and-battery-overhaul" }
+			]
+		},
+		{
+			"name": "Setsuna Digital",
+			"handle": "tipster account",
+			"signal": "low",
+			"focus": "Early component and design rumors",
+			"note": "Credited by Gizmochina for the earliest S27 S Pen-slot rumor currently located in the archive. One early report is not enough to establish a reliability record.",
+			"references": [
+				{ "model": "S27", "title": "S27 S Pen-slot rumor", "url": "https://www.gizmochina.com/2025/06/22/galaxy-s27-ultra-will-ditch-built-in-s-pen-says-tipster/" }
+			]
+		}
+	]
+}

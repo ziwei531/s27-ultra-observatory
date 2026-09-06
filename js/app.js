@@ -1,7 +1,7 @@
 import { filterReports, formatDate, readFilters, safeSourceUrl } from "./model.js?v=__BUILD_VERSION__";
 
 const elements = Object.fromEntries( [
-	  "filters", "model", "search", "sort", "model-name", "reports-model", "result-count", "report-list", "empty", "load-error"
+	  "filters", "model", "search", "sort", "model-name", "reports-model", "result-count", "report-list", "empty", "load-error", "leaker-list", "leakers-disclaimer"
 ].map( ( id ) => [ id, document.getElementById( id ) ] ) );
 let catalog;
 let currentSnapshot;
@@ -77,6 +77,39 @@ function renderResults() {
 	syncUrl();
 }
 
+function renderLeakers( data ) {
+	elements[ "leakers-disclaimer" ].textContent = data.disclaimer;
+	elements[ "leaker-list" ].replaceChildren( ...data.leakers.map( ( leaker ) => {
+		const article = createElement( "article", "", "leaker" );
+		const heading = createElement( "div", "", "leaker-heading" );
+		heading.append( createElement( "h3", leaker.name ), createElement( "span", leaker.signal, `signal signal-${ leaker.signal }` ) );
+		article.append( heading, createElement( "p", leaker.handle, "leaker-handle" ), createElement( "p", leaker.focus, "leaker-focus" ), createElement( "p", leaker.note, "leaker-note" ) );
+		const sources = document.createElement( "ul" );
+		for ( const reference of leaker.references ) {
+			const link = createElement( "a", `${ reference.model }: ${ reference.title } ↗` );
+			const url = safeSourceUrl( reference.url );
+			if ( url ) {
+				link.href = url;
+				link.rel = "noreferrer noopener";
+			}
+			const item = document.createElement( "li" );
+			item.append( link );
+			sources.append( item );
+		}
+		article.append( createElement( "h4", "Archive references" ), sources );
+		return article;
+	} ) );
+}
+
+async function loadLeakers() {
+	try {
+		renderLeakers( await fetchJson( "data/leakers.json" ) );
+	} catch {
+		elements[ "leaker-list" ].replaceChildren();
+		elements[ "leakers-disclaimer" ].textContent = "The individual-leaker index could not be loaded.";
+	}
+}
+
 async function loadModel( modelId ) {
 	selectedModel = catalog.models.find( ( model ) => model.id === modelId );
 	const manifest = await fetchJson( selectedModel.manifest );
@@ -119,7 +152,7 @@ async function initializeArchive() {
 			option.value = model.id;
 			elements.model.append( option );
 		}
-		await restoreLocation();
+		await Promise.all( [ loadLeakers(), restoreLocation() ] );
 		elements.filters.addEventListener( "submit", ( event ) => event.preventDefault() );
 		elements.model.addEventListener( "change", selectModel );
 		elements.search.addEventListener( "input", renderResults );
